@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #fefefe; /* near-white */
+    --color-foreground: #1e293b; /* rich-charcoal */
+    --color-border: #e2e8f0; /* neutral-gray */
+    --color-input: #f8fafc; /* subtle-gray */
+    --color-ring: #1e40af; /* deep-blue */
+    
+    /* Card Colors */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1e293b; /* rich-charcoal */
+    
+    /* Popover Colors */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1e293b; /* rich-charcoal */
+    
+    /* Muted Colors */
+    --color-muted: #f8fafc; /* subtle-gray */
+    --color-muted-foreground: #64748b; /* muted-slate */
+    
+    /* Primary Colors */
+    --color-primary: #1e40af; /* deep-blue */
+    --color-primary-foreground: #ffffff; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #64748b; /* sophisticated-slate */
+    --color-secondary-foreground: #ffffff; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #dc2626; /* clear-red */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #f59e0b; /* warm-amber */
+    --color-accent-foreground: #1e293b; /* rich-charcoal */
+    
+    /* Success Colors */
+    --color-success: #059669; /* forest-green */
+    --color-success-foreground: #ffffff; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #d97706; /* balanced-orange */
+    --color-warning-foreground: #ffffff; /* white */
+    
+    /* Error Colors */
+    --color-error: #dc2626; /* clear-red */
+    --color-error-foreground: #ffffff; /* white */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body, p, span, div {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
