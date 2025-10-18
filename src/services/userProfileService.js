@@ -133,5 +133,32 @@ export const userProfileService = {
         data: { enrollments: 0, courses: 0, submissions: 0 } 
       };
     }
+  },
+
+  // Upload avatar
+  async uploadAvatar(userId, file) {
+    try {
+      const fileExt = file?.name?.split('.')?.pop();
+      const fileName = `${userId}.${fileExt}`;
+      const filePath = `avatars/${fileName}`;
+
+      const { data, error } = await supabase?.storage?.from('profiles')?.upload(filePath, file, {
+        upsert: true
+      });
+
+      if (error) {
+        return { success: false, error: error?.message, data: null };
+      }
+
+      const { data: { publicUrl } } = supabase?.storage?.from('profiles')?.getPublicUrl(filePath);
+
+      return { success: true, error: null, data: { path: filePath, url: publicUrl } };
+    } catch (error) {
+      return { 
+        success: false, 
+        error: 'Failed to upload avatar', 
+        data: null 
+      };
+    }
   }
 };

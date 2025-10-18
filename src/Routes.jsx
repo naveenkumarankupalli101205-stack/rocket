@@ -7,6 +7,11 @@ import UserLogin from './pages/user-login';
 import LandingPage from './pages/landing-page';
 import RoleBasedDashboard from './pages/role-based-dashboard';
 import UserRegistration from './pages/user-registration';
+import CourseCatalog from './pages/course-catalog';
+import CourseDetails from './pages/course-details';
+import AssignmentDetails from './pages/assignment-details';
+import StudentGrades from './pages/student-grades';
+import UserProfile from './pages/user-profile';
 
 const Routes = () => {
   return (
@@ -20,6 +25,11 @@ const Routes = () => {
         <Route path="/landing-page" element={<LandingPage />} />
         <Route path="/role-based-dashboard" element={<RoleBasedDashboard />} />
         <Route path="/user-registration" element={<UserRegistration />} />
+        <Route path="/courses" element={<CourseCatalog />} />
+        <Route path="/course/:id" element={<CourseDetails />} />
+        <Route path="/assignments/:id" element={<AssignmentDetails />} />
+        <Route path="/grades" element={<StudentGrades />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>
