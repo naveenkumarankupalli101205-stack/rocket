@@ -1,0 +1,81 @@
+I have already built the following pages in my React + Supabase LMS project: Landing Page, User Registration, User Login, and Role-Based Dashboard.
+
+Now, I want to extend my LMS by adding these additional pages:
+
+1️⃣ Course Catalog Page (/courses)
+
+Fetch all available courses from Supabase courses table.
+
+Students should see all courses with title, description, and “Enroll” button.
+
+Teachers should see their own courses with “Edit” and “Delete” buttons.
+
+Add search and filter functionality for course title.
+
+Show loading spinner while fetching data.
+
+2️⃣ Course Details Page (/course/:id)
+
+Display full course information (title, description, duration, teacher name).
+
+Show assignments related to this course (from assignments table).
+
+If user is a teacher → Show “Create Assignment” button.
+
+If user is a student → Show “Submit Assignment” button and “View Materials.”
+
+Use Supabase relationships to fetch course + teacher + assignments.
+
+3️⃣ Assignment Details Page (/assignments/:id)
+
+Show assignment title, description, and due date.
+
+If student → Show upload field for submitting assignment files to Supabase Storage.
+
+If teacher → Show all student submissions (file link, student name, submitted_at).
+
+Allow teachers to grade submissions and give feedback.
+
+Grades stored in submissions table.
+
+4️⃣ Student Grades Page (/grades)
+
+Show student’s grades across all enrolled courses.
+
+Include columns: Course Name, Assignment Title, Grade, Feedback.
+
+Teachers → can view grades for their students by course.
+
+Fetch data from submissions joined with assignments and courses.
+
+5️⃣ User Profile Page (/profile)
+
+Show user details from profiles (name, email, role).
+
+Allow user to update name and profile picture (stored in Supabase Storage).
+
+Display role badge (Teacher/Student).
+
+Add “Logout” button with confirmation.
+
+Ensure only logged-in users can access.
+
+🧩 Technical Requirements
+
+Use React Router for navigation.
+
+Fetch all data securely from Supabase with proper RLS policies.
+
+Use TailwindCSS for clean UI and card layouts.
+
+Add toast notifications for success and error messages using react-hot-toast.
+
+Include loading states for all pages.
+
+🧱 Expected Output
+
+Fully functional and responsive pages for Course Catalog, Course Details, Assignment Details, Student Grades, and User Profile.
+
+Integration with existing authentication and role-based access system.
+
+Each page styled consistently with the existing SmartLearn theme.
